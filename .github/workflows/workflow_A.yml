@@ -1,13 +1,16 @@
-name: "Build"
+name: "Workflow A"
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
-      flagA: true
-      flagB: false
-  push:
-    branches:
-      - main
+      flagA:
+        required: true
+        type: string
+        description: 'flagA'
+      flagB:
+        required: true
+        type: string
+        description: 'flagB'
 
 jobs:
   job-A:

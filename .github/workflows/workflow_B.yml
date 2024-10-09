@@ -1,0 +1,13 @@
+name: Workflow B
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  chamar-workflow-a:
+    uses: ./.github/workflows/workflow_A.yml
+    with: 
+      flagA: true
+      flagB: false
