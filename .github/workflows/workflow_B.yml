@@ -9,5 +9,5 @@ jobs:
   chamar-workflow-a:
     uses: ./.github/workflows/workflow_A.yml
     with: 
-      flagA: true
+      flagA: false
       flagB: false
