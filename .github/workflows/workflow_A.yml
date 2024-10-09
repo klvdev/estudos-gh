@@ -15,15 +15,15 @@ on:
 jobs:
   job-A:
     runs-on: ubuntu-latest
-    if: ${{ inputs.flagA }}
+    if: ${{ inputs.flagA == 'true' }}
     steps:
       - name: JOB A
         run: echo  "Running JOB A"
   job-B:
     runs-on: ubuntu-latest
-    if: ${{ inputs.flagB }}
+    if: ${{ inputs.flagB == 'true' }}
     steps:
-      - name: JOB A
+      - name: JOB B
         run: echo  "Running JOB B"
   job-C:
     runs-on: ubuntu-latest
