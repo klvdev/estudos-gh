@@ -2,9 +2,9 @@ name: "Build"
 
 on:
   workflow_dispatch:
-  inputs:
-    flagA: true
-    flagB: false
+    inputs:
+      flagA: true
+      flagB: false
   push:
     branches:
       - main
