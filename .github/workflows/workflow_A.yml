@@ -19,6 +19,9 @@ jobs:
     steps:
       - name: JOB A
         run: echo  "Running JOB A"
+      - name: Comando inválido
+    run: comando_que_nao_existe
+    
   job-B:
     runs-on: ubuntu-latest
     if: ${{ inputs.flagB == 'true' }}
