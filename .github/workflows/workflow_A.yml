@@ -13,28 +13,24 @@ on:
         description: 'flagB'
 
 jobs:
-  job-A:
+  job-AB:
     runs-on: ubuntu-latest
-    if: ${{ inputs.flagA == 'true' }}
     steps:
       - name: JOB A
+        if: ${{ inputs.flagA == 'true' }}
         run: echo  "Running JOB A"
+
+    steps:
+      - name: JOB B
+        if: ${{ inputs.flagB == 'true' }}
+        run: echo  "Running JOB B"
 
       # - name: Comando inválido
       #   run: comando_que_nao_existe
-
-  job-B:
-    runs-on: ubuntu-latest
-    if: ${{ inputs.flagB == 'true' }}
-    steps:
-      - name: JOB B
-        run: echo  "Running JOB B"
+    
   job-C:
     runs-on: ubuntu-latest
-    needs: [ job-A, job-B ]
-    if: ${{ (needs['job-A'].result == 'success' && needs['job-B'].result == 'skipped') || 
-             (needs['job-B'].result == 'success' && needs['job-A'].result == 'skipped') || 
-             (needs['job-A'].result == 'success' && needs['job-B'].result == 'success') }}
+    needs: [ job-AB ]
     steps:
       - name: JOB C
         run: echo  "Running JOB C"
