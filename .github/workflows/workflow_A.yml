@@ -20,7 +20,6 @@ jobs:
         if: ${{ inputs.flagA == 'true' }}
         run: echo  "Running JOB A"
 
-    steps:
       - name: JOB B
         if: ${{ inputs.flagB == 'true' }}
         run: echo  "Running JOB B"
