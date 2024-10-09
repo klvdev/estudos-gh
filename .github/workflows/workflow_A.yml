@@ -17,17 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ inputs.flagA }}
     steps:
-      -name: JOB A
-      run: echo  "Running JOB A"
+      - name: JOB A
+        run: echo  "Running JOB A"
   job-B:
     runs-on: ubuntu-latest
     if: ${{ inputs.flagB }}
     steps:
-      -name: JOB A
-      run: echo  "Running JOB B"
+      - name: JOB A
+        run: echo  "Running JOB B"
   job-C:
     runs-on: ubuntu-latest
     needs: [ job-A, job-B ]
     steps:
-      -name: JOB C
-      run: echo  "Running JOB C"
+      - name: JOB C
+        run: echo  "Running JOB C"
